@@ -43,11 +43,29 @@ fi
 
 
 # Realizando o procedimento de clone e instalação\configuração dos recursos
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+if [ ! -d "$HOME/.zsh-syntax-highlighting" ]; then
+  echo "zsh-syntax-highlighting is not installed."
+  echo "Installing zsh-syntax-highlighting..."  
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+  echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+  echo "zsh-syntax-highlighting installed."
+else
+  echo "zsh-syntax-highlighting is already installed."
+fi
+
+if ! grep -q "zsh-syntax-highlighting" $HOME/.zshrc; then
+  echo "Adding zsh-syntax-highlighting to .zshrc"
+  echo "source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> $HOME/.zshrc
+  echo "zsh-syntax-highlighting added to .zshrc"
+else
+  echo "zsh-syntax-highlighting is already in .zshrc"
+fi
+
+
 
 # Configura o .zshrc
-source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 echo -e "\e[35;1m TMD - customização do ZSH concluída! Reinicie e seção para validar as alterações.\e[0m"
-
+echo -e "\033[1;32mObrigado por instalar e configurar o zsh no Termux!\033[0m"
+echo -e "\033[1;36mO zsh é uma ótima escolha para desenvolvedores.\033[0m"
+echo -e "\033[1;31mAgradecemos pela escolha do Termux como seu ambiente de desenvolvimento!\033[0m"
