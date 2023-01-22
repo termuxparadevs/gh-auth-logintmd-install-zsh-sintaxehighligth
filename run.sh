@@ -17,7 +17,7 @@ if ! [ -x "$(command -v git)" ]; then
   echo 'Installing git...'
   pkg install git -y
 else
-  echo 'git is already installed.'
+  echo -e "git ... \e[35;1m instalado!\033[0m"
 fi
 
 # Esse script verifica que o zsh já está instalado, caso contrário
@@ -28,7 +28,7 @@ if ! [ -x "$(command -v zsh)" ]; then
   echo 'Installing zsh...'
   pkg install zsh -y
 else
-  echo 'zsh is already installed.'
+  echo -e "zsh ... \e[35;1m instalado!\033[0m"
 fi
 
 # Esse script verifica se o oh-my-zsh está inslado
@@ -43,14 +43,14 @@ fi
 
 
 # Realizando o procedimento de clone e instalação\configuração dos recursos
-if [ ! -d "$HOME/.zsh-syntax-highlighting" ]; then
-  echo "zsh-syntax-highlighting is not installed."
-  echo "Installing zsh-syntax-highlighting..."  
+if [ ! -d "$HOME/zsh-syntax-highlighting" ]; then
+  echo -e "zsh syntaxe hig... \e[35;1m não está instalado!\031[0m"
+  echo -e "Realizando \e[35;1minstalação...!\032[0m"
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
   echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
   echo "zsh-syntax-highlighting installed."
 else
-  echo "zsh-syntax-highlighting is already installed."
+  echo -e "zsh-syntaxe-high... \e[35;1m OK\033[0m"
 fi
 
 if ! grep -q "zsh-syntax-highlighting" $HOME/.zshrc; then
