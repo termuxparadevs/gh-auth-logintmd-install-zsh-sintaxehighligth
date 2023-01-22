@@ -14,7 +14,7 @@ echo " "
 # problemas se usado de forma inorreta.
 
 if ! [ -x "$(command -v git)" ]; then
-  echo 'Error: git is not installed.' >&2
+  echo 'AVISO: git is not installed.' >&2
   echo 'Installing git...'
   pkg install git -y
 else
@@ -25,7 +25,7 @@ fi
 # Ele efetua o procedimento de instalação do ZSH
 
 if ! [ -x "$(command -v zsh)" ]; then
-  echo 'Error: zsh is not installed.' >&2
+  echo 'AVISO: zsh is not installed.' >&2
   echo 'Installing zsh...'
   pkg install zsh -y
 else
