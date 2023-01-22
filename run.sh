@@ -42,6 +42,7 @@ else
   echo -e " oh-my-zsh \e[32;1mok\033[0m"
 fi
 
+zsh
 chsh -s $(which zsh)
 
 # Realizando o procedimento de clone e instalação\configuração dos recursos
