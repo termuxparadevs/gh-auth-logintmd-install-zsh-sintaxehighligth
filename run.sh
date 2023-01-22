@@ -54,18 +54,7 @@ else
   echo -e " zsh-syntaxe-high... \e[32;1mok\033[0m"
 fi
 
-# Verifica se tem alterações no arquivo .zshrc 
-if ! grep -q "zsh-syntax-highlighting" $HOME/.zshrc; then
-  echo "Adding zsh-syntax-highlighting to .zshrc"
-  echo "source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> $HOME/.zshrc
-  echo "zsh-syntax-highlighting added to .zshrc"
-else
-  echo "zsh-syntax-highlighting is already in .zshrc"
-fi
+echo " "
 
 
-
-# Configura o .zshrc
-echo ""
-
-echo -e "\e[35;1m TMD - customização do ZSH concluída! Reinicie e seção para validar as alterações.\e[0m"
+echo -e "\e[35;1mTMD - customização do ZSH concluída! Reinicie e seção para validar as alterações.\e[0m"
