@@ -57,4 +57,5 @@ fi
 echo " "
 
 
-echo -e "\e[35;1mTMD - customização do ZSH concluída! Reinicie e seção para validar as alterações.\e[0m"
+echo -e "\e[32;1mConcluído!\e[0m"
+echo -e 'Reinicie a seção para validar as alterações.'
