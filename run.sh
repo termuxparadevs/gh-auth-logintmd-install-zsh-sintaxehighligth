@@ -3,7 +3,7 @@
 
 #---------------------------------------------------------------------------------
 # Iniciando 
-echo -e "\e[35;1mTMD iniicianco customização...\e[0m"
+echo -e "\e[35;1mTMD iniciando customização...\e[0m"
 echo " "
 
 # Este script verifica se o git está instalado no sistema. Caso não esteja, 
@@ -18,7 +18,7 @@ if ! [ -x "$(command -v git)" ]; then
   echo 'Installing git...'
   pkg install git -y
 else
-  echo -e " git >> \e[32;1mok\033[0m"
+  echo -e " git \e[32;1mok\033[0m"
 fi
 
 # Esse script verifica que o zsh já está instalado, caso contrário
@@ -29,7 +29,7 @@ if ! [ -x "$(command -v zsh)" ]; then
   echo 'Installing zsh...'
   pkg install zsh -y
 else
-  echo -e " zsh >> \e[32;1mok\033[0m"
+  echo -e " zsh \e[32;1mok\033[0m"
 fi
 
 # Esse script verifica se o oh-my-zsh está inslado
@@ -39,7 +39,7 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "Installing oh-my-zsh..."
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 else
-  echo -e " oh-my-zsh >> \e[32;1mok\033[0m"
+  echo -e " oh-my-zsh \e[32;1mok\033[0m"
 fi
 
 
@@ -51,7 +51,7 @@ if [ ! -d "$HOME/zsh-syntax-highlighting" ]; then
   echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
   echo "zsh-syntax-highlighting installed."
 else
-  echo -e " zsh-syntaxe-high... \e[i32;1mok\033[0m"
+  echo -e " zsh-syntaxe-high... \e[32;1mok\033[0m"
 fi
 
 # Verifica se tem alterações no arquivo .zshrc 
