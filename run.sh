@@ -44,16 +44,11 @@ fi
 
 
 # Realizando o procedimento de clone e instalação\configuração dos recursos
-if [ ! -d "$HOME/zsh-syntax-highlighting" ]; then
-  echo -e "zsh syntaxe hig... \e[31;1m não está instalado!\031[0m"
-  echo -e "Realizando \e[35;1minstalação...!\032[0m"
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
-  echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
-  echo "zsh-syntax-highlighting installed."
-else
-  echo -e " zsh-syntaxe-high... \e[32;1mok\033[0m"
-fi
 
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
+echo "source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+
+echo -e " zsh-syntaxe-high... \e[32;1mok\033[0m"
 echo " "
 
 
