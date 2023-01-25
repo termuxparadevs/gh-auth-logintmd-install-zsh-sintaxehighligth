@@ -1,4 +1,4 @@
-# TMD - Termux para devs
+#TMD - Termux para devs
 # Código de origem: https://github.com/zsh-users/zsh-syntax-highlighting/blob/master
 
 #---------------------------------------------------------------------------------
@@ -45,14 +45,27 @@ fi
 zsh
 chsh -s $(which zsh)
 
+# -------------------------------------------------------------------------------
+# CONFIGURA O ZSH SYNTAX-HIGHLIGHTING
 # Realizando o procedimento de clone e instalação\configuração dos recursos
 rm -rf ~/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 echo "source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> $HOME/.zshrc
-
 echo -e " zsh-syntaxe-high... \e[32;1mok\033[0m"
 echo " "
 
+# --------------------------------------------------------------------------------
+# INSTALA E CONFIGURA O ZSH AUTOCOMPLETE
+# Realiza procedimento de instalação e configuração do plugin de customização do zsh
+# que possibilita ter a função de autocomplete com base em histórico de comandos
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> $HOME/.zshrc
 
+zsh
+chsh -s $(which zsh)
+
+# --------------------------------------------------------------------------------
+# CONCLUSÃO DA INSTALAÇÃO
+# Finaliza atualização e procediemnto de instalação do ZSH
 echo -e "\e[32;1mConcluído!\e[0m"
 echo -e 'Reinicie a seção para validar as alterações.'
