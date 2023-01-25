@@ -59,7 +59,14 @@ echo " "
 # Realiza procedimento de instalação e configuração do plugin de customização do zsh
 # que possibilita ter a função de autocomplete com base em histórico de comandos
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions
+
+echo "#------------------------------------------------------" >> $HOME/.zshrc
+echo "# CONFIGURAÇÃO DO ZSH AUTOCOMPLETE" >> $HOME/.zshrc
 echo "source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh" >> $HOME/.zshrc
+echo "ZSH_AUTOSUGGEST_STRATEGY=(history completion)" >> $HOME/.zshrc
+echo "ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=true" >> $HOME/.zshrc
+echo "ZSH_AUTOSUGGEST_EXECUTE_WIDGETS=true" >> $HOME/.zshrc
+echo "bindkey '^n' autosuggest-accept" >> $HOME/.zshrc
 
 zsh
 chsh -s $(which zsh)
